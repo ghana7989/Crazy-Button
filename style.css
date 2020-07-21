@@ -1,0 +1,107 @@
+body {
+  background-color: #212333;
+  overflow: hidden;
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+h1 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 1.1rem;
+  position: absolute;
+  color: antiquewhite;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+h1:hover {
+  animation: p2 5s ease-in infinite;
+}
+.ripple {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #212333;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  box-shadow: 0.8rem 0.8rem 1rem #151722, -0.8rem -0.8rem 1rem #25283b,
+    inset 0.8rem 0.8rem 1rem #151722, inset -0.8rem -0.8rem 1rem #25283b;
+  /* animation: rips 2s ease-in-out infinite; */
+  /* transition: all 0.4s; */
+}
+.ripple:hover {
+  cursor: pointer;
+  animation: pulse 0.2s ease-out infinite;
+}
+
+@keyframes pulse {
+  100% {
+    box-shadow: 0.8rem 0.8rem 1rem darkred, -0.8rem -0.8rem 1rem #25283b,
+      inset 0.8rem 0.8rem 1rem #151722,
+      inset -0.8rem -0.8rem 0.5rem rgb(8, 8, 8);
+  }
+}
+@keyframes p2 {
+  10% {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    filter: saturate(200%);
+    transform: translate(-50%, -50%) scale(40);
+    color: chartreuse;
+    /* transform: scale(0.4); */
+  }
+  20% {
+    position: absolute;
+    filter: saturate(200%);
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(550);
+    color: deeppink;
+    /* transform: scale(0.55); */
+  }
+  30% {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    filter: saturate(200%);
+
+    transform: translate(-50%, -50%) scale(65);
+    color: rgb(168, 250, 4);
+    /* transform: scale(0.65); */
+  }
+  40% {
+    position: absolute;
+    top: 50%;
+    filter: saturate(200%);
+
+    left: 50%;
+    transform: scale(75) translate(-50%, -50%);
+    color: turquoise;
+    /* transform: scale(0.75); */
+  }
+  70% {
+    position: absolute;
+    top: 50%;
+    filter: saturate(200%);
+
+    left: 50%;
+    transform: scale(1) translate(-50%, -50%);
+    /* transform: ; */
+
+    color: darkred;
+  }
+  100% {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    filter: saturate(200%);
+
+    transform-origin: 0%;
+    transform: scale(100) translate(-50%, -50%);
+    color: darkgoldenrod;
+  }
+}
